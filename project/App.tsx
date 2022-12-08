@@ -26,7 +26,6 @@ const App = () => {
   //AICI E PROBLEMA
 
   const transformImageToTensor = async (uri) => {
-    //.ts: const transformImageToTensor = async (uri:string):Promise<tf.Tensor>=>{
     //read the image as base64
     const img64 = await fs.readAsStringAsync(uri, { encoding: fs.EncodingType.Base64 })
     const imgBuffer = tf.util.encodeString(img64, 'base64').buffer
@@ -36,32 +35,12 @@ const App = () => {
     //resize the image
     //AICI ARE O EROARE FORMIDABILA
     imgTensor = tf.image.resizeNearestNeighbor(imgTensor, [300, 300])
-    //normalize; if a normalization layer is in the model, this step can be skipped
+    //normalization
     const tensorScaled = imgTensor.div(scalar)
-    //final shape of the rensor
+    //final shape of the tensor
     const img = tf.reshape(tensorScaled, [1, 300, 300, 3])
     return img
   }
-
-
-
-  function imageToTensor(rawImageData) {
-    //Function to convert jpeg image to tensors
-    const TO_UINT8ARRAY = true;
-    const { width, height, data } = jpeg.decode(rawImageData);
-    // Drop the alpha channel info for mobilenet
-    const buffer = new Uint8Array(width * height * 3);
-    let offset = 0; // offset into original data
-    for (let i = 0; i < buffer.length; i += 3) {
-      buffer[i] = data[offset];
-      buffer[i + 1] = data[offset + 1];
-      buffer[i + 2] = data[offset + 2];
-      offset += 4;
-    }
-    return tf.tensor3d(buffer, [height, width, 3]);
-  }
-
-
 
   const makePredictions = async (batch, model, imagesTensor: tf.Tensor3D) => {
     //.ts: const makePredictions = async (batch:number, model:tf.LayersModel,imagesTensor:tf.Tensor<tf.Rank>):Promise<tf.Tensor<tf.Rank>[]>=>{
