@@ -16,7 +16,7 @@
 - npx react-native run-ios
 
 ### Some Tutorials of including model in React Native:
-- [React Native + Tensorflow.js - implementing a model] (https://medium.com/@ferlatti.aldo/react-native-tensorflow-js-implementing-a-model-daad1a2c7f30) This is the one used in the code
+- [React Native + Tensorflow.js - implementing a model](https://medium.com/@ferlatti.aldo/react-native-tensorflow-js-implementing-a-model-daad1a2c7f30) This is the one used in the code
 - [Tensorflow.js for RN](https://blog.tensorflow.org/2020/02/tensorflowjs-for-react-native-is-here.html) 
 - [Image Classification on React Native with TensorFlow.js and MobileNet](https://heartbeat.comet.ml/image-classification-on-react-native-with-tensorflow-js-and-mobilenet-48a39185717c)
 
