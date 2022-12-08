@@ -20,7 +20,7 @@
 - [Tensorflow.js for RN](https://blog.tensorflow.org/2020/02/tensorflowjs-for-react-native-is-here.html) 
 - [Image Classification on React Native with TensorFlow.js and MobileNet](https://heartbeat.comet.ml/image-classification-on-react-native-with-tensorflow-js-and-mobilenet-48a39185717c)
 
-##### [What is a tensor?] (https://tensorflow.rstudio.com/guides/tensorflow/tensor)
+##### [What is a tensor?](https://tensorflow.rstudio.com/guides/tensorflow/tensor)
 
 ##### The ML model is already included (my-model.json & my-model-weights.bin). It was created to recognize handwritten digits from 28x28 pixel black and white pictures like in [this tutorial](https://codelabs.developers.google.com/codelabs/tfjs-training-classfication/index.html#0)
 
